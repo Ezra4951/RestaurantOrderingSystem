@@ -52,6 +52,8 @@ public class Calc {
 				System.out.println("SYSTEM ERROR!!! Division by zero!!!!!");
 				valid = false;
 			   } break;
+		case '%':
+			result = num % num2; break;
 			   default: 
 				   System.out.println("Invalid operator. Please use +, -, *, or /.");
 	    	} 
