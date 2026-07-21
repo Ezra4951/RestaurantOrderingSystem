@@ -15,21 +15,22 @@ public class Calc {
 			System.out.print("Enter Operator [+, -, *, /, %]: ");
 			String op = input.nextLine();
 			
-			System.out.print("Enter your First Number: ");
-			double num = input.nextFloat();
-			
-			
-			System.out.print("Enter your Second Number: ");
-			double num2 = input.nextFloat();
-			input.nextLine();
-			
 			 if (op.equalsIgnoreCase("cancel")) {
-				 System.out.println("Calculator Cancelled.... EXITING CALCULATOR! TRY AGAIN!!");
+				 System.out.println("Calculator Cancelled.... EXITING CALCULATOR!\n"
+				 		+ " THANK YOU FOR USING MY BASIC CALCULATOR!!");
 				 return;
-			 } if (op.matches("[0-9]+")) {
+			 } if (op.matches("[0a-zA-Z0-9]+")) {
 				 System.out.println("ERROR!!!! Restarting.....!!!!\n");
 				 continue;
 			  }
+		
+			
+			System.out.print("Enter your First Number: ");
+			double num = input.nextFloat();
+				
+			System.out.print("Enter your Second Number: ");
+			double num2 = input.nextFloat();
+			input.nextLine();
 			 
 			 	double result = 0;
 		
