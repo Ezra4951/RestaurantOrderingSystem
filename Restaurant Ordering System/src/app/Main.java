@@ -1,6 +1,8 @@
-package System;
+package app;
 
 import java.sql.Connection;
+
+import database.DBConnection;
 
 public class Main {
 
