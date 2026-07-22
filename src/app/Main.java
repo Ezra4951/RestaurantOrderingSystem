@@ -36,7 +36,7 @@ public class Main {
     		dao.viewCategories();
     		break;
     	case 3:
-    		System.out.println();
+    		System.out.println("SO GLAD IT FIXED NOW LOL");
     		break;
     	case 4:
     		System.out.println();
