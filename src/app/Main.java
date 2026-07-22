@@ -39,7 +39,7 @@ public class Main {
     		System.out.println("SO GLAD IT FIXED NOW LOL");
     		break;
     	case 4:
-    		System.out.println();
+    		System.out.println("!!!!!!!!!");
     		break;
     	case 5:
     		System.out.println("Thank you for using my Restaurant Ordering Sys!");
