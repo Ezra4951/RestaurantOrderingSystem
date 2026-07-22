@@ -36,10 +36,8 @@ public class Main {
     		dao.viewCategories();
     		break;
     	case 3:
-    		System.out.println("SO GLAD IT FIXED NOW LOL");
     		break;
     	case 4:
-    		System.out.println("FIXING AGAIN!!!!!!!!!!!");
     		break;
     	case 5:
     		System.out.println("Thank you for using my Restaurant Ordering Sys!");
