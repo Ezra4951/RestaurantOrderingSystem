@@ -47,12 +47,34 @@ public class CategoryDAO {
 
 	            int id = rs.getInt("category_id");
 	            String name = rs.getString("category_name");
-
 	            System.out.println(id + " - " + name);
 	        }
 
 	    } catch (Exception e) {
 	        e.printStackTrace();
 	    }
+	}
+	public void updateCategory(Category category) {
+		
+		String sql = "UPDATE categories\r\n"
+				+ "SET category_name = ?\r\n"
+				+ "WHERE category_id = ?;";
+		try (
+		        Connection conn = DBConnection.getConnection();
+		        PreparedStatement ps = conn.prepareStatement(sql);
+		    ) {
+				ps.setString(1, category.getCategoryName());
+				ps.setInt(2, category.getCategoryId());
+				
+				int rows = ps.executeUpdate();
+				
+				if (rows > 0) {
+				    System.out.println("Category updated successfully!");
+				} else {
+				    System.out.println("Category ID not found.");
+				}
+		} catch (Exception e) {
+	        e.printStackTrace();
+		}
 	}
 }

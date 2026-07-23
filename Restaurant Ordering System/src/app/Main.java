@@ -6,13 +6,15 @@ import dao.CategoryDAO;
 import model.Category;
 
 public class Main {
-
+		    
     public static void main(String[] args) {
     	
     	Scanner input = new Scanner(System.in);
     	CategoryDAO dao = new CategoryDAO();
     	
-    	System.out.println("=== Category Menu ===");
+    	int choice;
+    do 	{
+    	System.out.println("\n=== Category Menu ===");
     	System.out.println("1. Add Category!");
     	System.out.println("2. View Categories!");
     	System.out.println("3. Update Category!");
@@ -20,7 +22,7 @@ public class Main {
     	System.out.println("5. EXIT!!!!");
     	System.out.println("=====================");
     	System.out.print("Choose: ");
-    	int choice = input.nextInt();
+    	choice = input.nextInt();
     	input.nextLine();
     	
     switch (choice) {
@@ -36,7 +38,14 @@ public class Main {
     		dao.viewCategories();
     		break;
     	case 3:
-    		System.out.println("SO GLAD IT FIXED NOW LOL");
+    		System.out.print("Enter CategoryId: ");
+    		int id = input.nextInt();
+    		input.nextLine();
+    		System.out.print("Enter New Category Name: ");
+    		String name1 = input.nextLine();
+    		
+    		Category category1 = new Category(id, name1);
+    		dao.updateCategory(category1);
     		break;
     	case 4:
     		System.out.println("FIXING AGAIN!!!!!!!!!!!");
@@ -46,9 +55,11 @@ public class Main {
     		break;
     	default:
     		 System.out.println("Invalid choice.");
-    		}
-    	
-    		input.close();
-        }
+    		  }
+           } while (choice != 5);
+    	input.close();
     }
+ }
+
+
 
