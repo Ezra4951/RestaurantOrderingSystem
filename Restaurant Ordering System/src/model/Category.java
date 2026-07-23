@@ -1,5 +1,7 @@
 package model;
 
+
+// category done 9:14pm 7/23/2026
 public class Category {
 		 private int categoryId;
 		 private String categoryName;
