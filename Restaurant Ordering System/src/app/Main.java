@@ -67,7 +67,12 @@ public class Main {
     		pause();
     		break;
     	case 4:
-    		System.out.println("FIXING AGAIN!!!!!!!!!!!");
+    		System.out.print("Enter CategoryID to delete: ");
+    		int id1 = input.nextInt();
+    		input.nextLine();
+    		
+    		dao.deleteCategory(id1);
+    		pause();
     		break;
     	case 5:
     		System.out.println("Thank you for using my Restaurant Ordering Sys!");

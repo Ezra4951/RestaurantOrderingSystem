@@ -75,6 +75,31 @@ public class CategoryDAO {
 				}
 		} catch (Exception e) {
 	        e.printStackTrace();
-		}
+	   }
 	}
+	
+	public void deleteCategory(int id) {
+		
+		String sql = "DELETE FROM categories\r\n"
+				+ "WHERE category_id = ?;";
+		try (
+			    Connection conn = DBConnection.getConnection();
+			    PreparedStatement ps = conn.prepareStatement(sql);
+			) {
+				
+				ps.setInt(1, id);
+				
+				int rows = ps.executeUpdate();
+				
+				if (rows > 0) {
+				    System.out.println("Category deleted successfully!");
+				} else {
+				    System.out.println("Category ID not found.");
+				}
+			
+			}
+			catch (Exception e) {
+			    e.printStackTrace();
+			}
+		}
 }
