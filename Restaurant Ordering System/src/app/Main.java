@@ -6,10 +6,23 @@ import dao.CategoryDAO;
 import model.Category;
 
 public class Main {
+	
+	static Scanner input = new Scanner(System.in);
+	
+	public static void clearScreen() {
+		System.out.println("\033[H\033[2J");
+	    System.out.flush();
+	}
+	
+	public static void pause() {
+	    System.out.println();
+	    System.out.print("Press ENTER to continue...");
+	    input.nextLine();
+	    clearScreen();
+	}
 		    
     public static void main(String[] args) {
     	
-    	Scanner input = new Scanner(System.in);
     	CategoryDAO dao = new CategoryDAO();
     	
     	int choice;
@@ -25,6 +38,9 @@ public class Main {
     	choice = input.nextInt();
     	input.nextLine();
     	
+    	System.out.println("\033[H\033[2J");
+	    System.out.flush();
+    	
     switch (choice) {
     	case 1: 
     		System.out.print("Enter Category Name: ");
@@ -33,9 +49,11 @@ public class Main {
 	
     		Category category = new Category(name);
     		dao.addCategory(category);
+    		pause();
     		break;
     	case 2:
     		dao.viewCategories();
+    		pause();
     		break;
     	case 3:
     		System.out.print("Enter CategoryId: ");
@@ -46,6 +64,7 @@ public class Main {
     		
     		Category category1 = new Category(id, name1);
     		dao.updateCategory(category1);
+    		pause();
     		break;
     	case 4:
     		System.out.println("FIXING AGAIN!!!!!!!!!!!");
